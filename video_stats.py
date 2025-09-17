@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path="./.env")
 
 API_KEY = os.getenv("API_KEY")
-CHANNEL_HANDLE = "3blue1brown"
+CHANNEL_HANDLE = os.getenv("CHANNEL_HANDLE")
 maxResults = 50
 
 
@@ -33,7 +33,7 @@ def get_playlist_id():
 
         channel_playlist_id = channel_items["contentDetails"]["relatedPlaylists"]["uploads"]
 
-        print(channel_playlist_id)
+        #print(channel_playlist_id)
         
         return channel_playlist_id
     
@@ -152,12 +152,12 @@ def save_to_json(extracted_data):
     
     
 if __name__ == "__main__":
-    print(API_KEY)
+    #print(API_KEY)
     playlistId = get_playlist_id()
     video_ids = get_video_ids(playlistId)
-    print(extract_video_data(video_ids))
-    #video_data = extract_video_data(video_ids)
-    #save_to_json(video_data)
+    #print(extract_video_data(video_ids))
+    video_data = extract_video_data(video_ids)
+    save_to_json(video_data)
     
 
         
