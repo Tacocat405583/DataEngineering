@@ -14,7 +14,7 @@ from datawarehouse.dwh import staging_table, core_table
 from dataquality.soda import yt_elt_data_quality
 
 # Define the local timezone
-local_tz = pendulum.timezone("Europe/Malta")
+local_tz = pendulum.timezone("America/Los_Angeles")
 
 # Default Args
 default_args = {
