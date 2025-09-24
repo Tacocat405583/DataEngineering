@@ -48,7 +48,7 @@ x-airflow-common:
   &airflow-common
   # Use custom image that builds on top of default airflow image (currently; Default: apache/airflow:2.9.2)
   # Image stored on Dockerhub
-  image: ${DOCKERHUB_NAMESPACE}/${DOCKERHUB_REPOSITORY}:${IMAGE_TAG}
+  image: ${DOCKERHUB_NAMESPACE}/${DOCKERHUB_REPOSITORY}:latest
   # Use the .env file to read the connection params and variables - SWITCH THIS OFF WHEN USING GITHUB ACTIONS
   # env_file: #comment out for CI-CD workflow #########################################################
   #   - .env
@@ -113,7 +113,7 @@ services:
     image: postgres:13
     # Use the .env file to read the connection params - SWITCH THIS OFF WHEN USING GITHUB ACTIONS
     # env_file:###################################################################
-    #   - .env
+    #   - .env #test for workflow
     # Env vars after POSTGRES_PASSWORD are needed for CI-CD workflow - SWITCH THIS ALL ON WHEN USING GITHUB ACTIONS
     environment:
       - POSTGRES_USER=${POSTGRES_CONN_USERNAME}
