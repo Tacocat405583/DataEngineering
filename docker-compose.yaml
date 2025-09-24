@@ -43,7 +43,7 @@
 #                                Default: ''
 #
 # Feel free to modify this file to suit your needs.
----
+--- # test for workflow
 x-airflow-common:
   &airflow-common
   # Use custom image that builds on top of default airflow image (currently; Default: apache/airflow:2.9.2)
