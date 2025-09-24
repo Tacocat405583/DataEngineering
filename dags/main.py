@@ -18,11 +18,11 @@ local_tz = pendulum.timezone("America/Los_Angeles")
 
 # Default Args
 default_args = {
-    "owner": "dataengineers",
+    "owner": "tacocat405583",
     "depends_on_past": False,
     "email_on_failure": False,
     "email_on_retry": False,
-    "email": "data@engineers.com",
+    "email": "nicolashernan2029@gmail.com",
     # 'retries': 1,
     # 'retry_delay': timedelta(minutes=5),
     "max_active_runs": 1,
@@ -68,8 +68,8 @@ with DAG(
 ) as dag_update:
 
     # Define tasks
-    update_staging = staging_table
-    update_core = core_table
+    update_staging = staging_table()
+    update_core = core_table()
 
     trigger_data_quality = TriggerDagRunOperator(
         task_id="trigger_data_quality",
@@ -77,8 +77,7 @@ with DAG(
     )
 
     # Define dependencies
-    update_staging() >> update_core() >> trigger_data_quality
-
+    update_staging >> update_core >> trigger_data_quality
 
 # DAG 3: data_quality
 with DAG(
