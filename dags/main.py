@@ -77,7 +77,8 @@ with DAG(
     )
 
     # Define dependencies
-    update_staging >> update_core >> trigger_data_quality
+    update_staging() >> update_core() >> trigger_data_quality
+
 
 # DAG 3: data_quality
 with DAG(
