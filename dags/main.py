@@ -68,8 +68,8 @@ with DAG(
 ) as dag_update:
 
     # Define tasks
-    update_staging = staging_table()
-    update_core = core_table()
+    update_staging = staging_table
+    update_core = core_table
 
     trigger_data_quality = TriggerDagRunOperator(
         task_id="trigger_data_quality",
