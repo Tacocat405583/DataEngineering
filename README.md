@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # YouTube Data ELT Pipeline
 
 An automated ELT (Extract, Load, Transform) pipeline that pulls video analytics from a YouTube channel, stores them in a PostgreSQL data warehouse, and validates data quality — orchestrated with Apache Airflow and containerized with Docker.
@@ -246,3 +247,6 @@ Soda checks run after every load and validate:
 - No NULL `Video_ID` values in staging or core
 - No duplicate `Video_ID` values
 - `Likes_Count` and `Comments_Count` do not exceed `Video_Views`
+=======
+
+>>>>>>> ab4a232c3fc750d04c6deaa93ce743284e4f59c9
